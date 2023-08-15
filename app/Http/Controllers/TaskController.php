@@ -30,7 +30,9 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        Task::create($request->all());
+        // return view('index'); funciona pero el video lo mostro con el codigo de abajo
+        return redirect()->route('tasks.index');
         //
     }
 
